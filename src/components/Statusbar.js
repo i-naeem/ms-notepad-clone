@@ -1,10 +1,20 @@
+import styled from 'styled-components';
+import { StatusbarItem } from './StatusbarItem';
+
+const StyledStatusbar = styled('div')`
+  border-top: 1px solid rgb(215, 215, 215);
+  background-color: rgba(240, 240, 240);
+  justify-content: end;
+  display: flex;
+`;
+
 export const StatusBar = (props) => {
   return (
-    <div>
-      <span>Ln 1, Col 0</span>
-      <span>100%</span>
-      <span>Windows (CRLF)</span>
-      <span>UTF-8</span>
-    </div>
+    <StyledStatusbar>
+      <StatusbarItem>Ln 1, Col 0</StatusbarItem>
+      <StatusbarItem width="auto">100%</StatusbarItem>
+      <StatusbarItem>Windows (CRLF)</StatusbarItem>
+      <StatusbarItem>UTF-8</StatusbarItem>
+    </StyledStatusbar>
   );
 };
