@@ -1,7 +1,7 @@
-import { Editor } from './components/Editor';
-import { Navbar } from './components/Navbar';
-import { StatusBar } from './components/Statusbar';
+import { StatusBar } from './components/Statusbar/Statusbar';
+import { Navbar } from './components/Navbar/Navbar';
 import { StyledApp } from './styles/App.styled';
+import { Editor } from './components/Editor';
 
 function App() {
   return (
