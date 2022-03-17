@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useEditor } from '../../context/EditorContext';
 import { StatusbarItem } from './StatusbarItem';
 
 const StyledStatusbar = styled('div')`
@@ -9,9 +10,12 @@ const StyledStatusbar = styled('div')`
 `;
 
 export const StatusBar = (props) => {
+  const { rows, cols } = useEditor();
   return (
     <StyledStatusbar>
-      <StatusbarItem>Ln 1, Col 0</StatusbarItem>
+      <StatusbarItem>
+        Ln {rows}, Col {cols}
+      </StatusbarItem>
       <StatusbarItem width="auto">100%</StatusbarItem>
       <StatusbarItem>Windows (CRLF)</StatusbarItem>
       <StatusbarItem>UTF-8</StatusbarItem>

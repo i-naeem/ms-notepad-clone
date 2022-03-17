@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useEditor } from '../context/EditorContext';
 
 const StyledTextArea = styled('textarea')`
   width: 100vw;
@@ -11,5 +12,8 @@ const StyledTextArea = styled('textarea')`
   font-family: 'Consolas', 'Lucida Sans', 'sans-serif';
 `;
 export const Editor = (props) => {
-  return <StyledTextArea {...props} />;
+  const { input, handleInputChange } = useEditor();
+  return (
+    <StyledTextArea {...props} value={input} onChange={handleInputChange} />
+  );
 };
