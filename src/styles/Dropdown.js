@@ -15,6 +15,7 @@ const Trigger = styled(DropdownMenu.Trigger)`
 
 const Content = styled(DropdownMenu.Content)`
   min-width: 230px;
+  padding: 3px 5px;
   background-color: rgb(242, 242, 242);
   box-shadow: 2px 2px 3px 0px darkgrey, -1px -1px 3px 0px darkgrey;
 };
