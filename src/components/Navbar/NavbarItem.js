@@ -6,8 +6,7 @@ const StyledButton = styled('button')`
   border: none;
   padding: 2px 3px;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: rgba(229, 243, 255);
   }
 `;
