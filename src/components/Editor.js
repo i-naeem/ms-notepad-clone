@@ -12,8 +12,6 @@ const StyledTextArea = styled('textarea')`
   font-family: 'Consolas', 'Lucida Sans', 'sans-serif';
 `;
 export const Editor = (props) => {
-  const { input, handleInputChange } = useEditor();
-  return (
-    <StyledTextArea {...props} value={input} onChange={handleInputChange} />
-  );
+  const { input, events } = useEditor();
+  return <StyledTextArea {...props} {...events} value={input} />;
 };

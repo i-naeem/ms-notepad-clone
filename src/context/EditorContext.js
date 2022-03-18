@@ -4,19 +4,28 @@ const EditorContext = createContext(null);
 
 const EditrContextProvider = (props) => {
   const [input, setInput] = useState('');
+  const [rows, setRows] = useState(1);
+  const [cols, setCols] = useState(1);
 
-  const handleInputChange = (event) => {
+  const onChange = (event) => {
     setInput(event.target.value);
   };
 
-  const rows = input.split('\n').length;
-  const cols = input.length;
+  const onKeyUp = (event) => {
+    var textLines = event.target.value
+      .substr(0, event.target.selectionStart)
+      .split('\n');
+    setRows(() => textLines.length);
+    setCols(() => textLines[textLines.length - 1].length + 1);
+  };
+
+  const onMouseUp = (event) => event.target.onkeyup();
 
   const value = {
     rows,
     cols,
     input,
-    handleInputChange,
+    events: { onChange, onKeyUp, onMouseUp },
   };
 
   return (
