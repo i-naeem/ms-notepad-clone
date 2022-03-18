@@ -21,10 +21,13 @@ const EditrContextProvider = (props) => {
 
   const onMouseUp = (event) => event.target.onkeyup();
 
+  const reset = () => setInput('');
+
   const value = {
     rows,
     cols,
     input,
+    reset,
     events: { onChange, onKeyUp, onMouseUp },
   };
 

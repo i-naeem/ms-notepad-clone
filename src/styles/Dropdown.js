@@ -20,20 +20,7 @@ const Content = styled(DropdownMenu.Content)`
 };
 `;
 
-const Item = styled(DropdownMenu.Item)`
-  font-size: 13px;
-  padding: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &:hover {
-    background-color: rgb(145, 201, 247);
-    outline: none;
-  }
-`;
-
-export const Dropdown = ({ label = 'Dropdowns', options = [] }) => {
+export const Dropdown = ({ label = 'Dropdowns', children }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -41,13 +28,7 @@ export const Dropdown = ({ label = 'Dropdowns', options = [] }) => {
       <Trigger role="button" open={open}>
         {label}
       </Trigger>
-      <Content align="start">
-        {options.map(({ label, shortcut, onClick }) => (
-          <Item key={label} onClick={onClick}>
-            {label} {shortcut && <kbd>{shortcut}</kbd>}
-          </Item>
-        ))}
-      </Content>
+      <Content align="start">{children}</Content>
     </DropdownMenu.Root>
   );
 };
