@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import { useEditor } from '../../context/EditorContext';
-import { useZoom } from '../../hooks/useZoom';
 import { StatusbarItem } from './StatusbarItem';
+import { useZoom } from '../../hooks/useZoom';
+import styled from 'styled-components';
 
 const StyledStatusbar = styled('div')`
   border-top: 1px solid rgb(215, 215, 215);
